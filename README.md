@@ -5,7 +5,7 @@
 -Sasha Granelli 
 
 #Project Description : 
-As part of our Data Mining and Machine Learning class, we are tasked with enhancing a university's library platform by developing a personalized book recommendation system. The system will use collaborative filtering techniques to analyze implicit feedback data and generate book suggestions based on the individual books preferences. By delivering more relevant and tailored recommendations, the system aims to boost user engagement and help users effortlessly discover books that align with their interests.
+As part of our Data Mining and Machine Learning project, we are tasked with enhancing a university's library platform by developing a personalized book recommendation system. The system will use collaborative filtering techniques to analyze implicit feedback data and generate book suggestions based on the individual books preferences. By delivering more relevant and tailored recommendations, the system aims to boost user engagement and help users effortlessly discover books that align with their interests.
 
 #Project structure : ?
 
