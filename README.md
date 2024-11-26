@@ -7,7 +7,7 @@
 #Project Description : 
 As part of our Data Mining and Machine Learning class, we are tasked with enhancing a university's library platform by developing a personalized book recommendation system. The system will use collaborative filtering techniques to analyze implicit feedback data and generate book suggestions based on the individual books preferences. By delivering more relevant and tailored recommendations, the system aims to boost user engagement and help users effortlessly discover books that align with their interests.
 
-#Project structure : 
+#Project structure : ?
 
 #Important link : 
 Link to download the folder with our app and all the models : 
@@ -15,8 +15,8 @@ Link to download the folder with our app and all the models :
 ## Technique, Precision and Recall :
 |   Technique          |   Precision@10   |   Recall@10   |  
 |----------------------|------------------|---------------|  
-| User-to-User CF      | 0.1704           | 0.8861        |  
-| Item-to-Item CF      | 0.1608           | 0.8075       |  
+| User-to-User CF      | 0.0565           | 0.2906       |  
+| Item-to-Item CF      | 0.0556           | 0.2639       |  
 | Optimized Model      | 0.1452           | 0.1452        |  
 
 ##Data Exploration (EDA):
