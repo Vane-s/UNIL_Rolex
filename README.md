@@ -20,7 +20,7 @@ Link to download the folder with our app and all the models :
 | Optimized Model      | 0.1452           | 0.1452        |  
 
 ##Data Exploration (EDA):
-1. Interaction Summary:
+##1. Interaction Summary:
 -Users in the Platform: 7,838
 -Books with Interactions: 15,109
 -Total Books Available: 15,291
