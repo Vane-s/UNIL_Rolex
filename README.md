@@ -38,7 +38,7 @@ In order to investigate user engagement trends, different types of visualization
 
 #Best Model : ?
 
-#Data enhancement 
+#Data enhancement: 
 To enriche prediction accuracy, we can augment our dataset by using an API to gather additional details, such as book descriptions. This will allow the model to access a more comprehensive set of information, facilitating the use of text embedding for more accurate and insightful recommendations.
 
 #Leaderboard : 
