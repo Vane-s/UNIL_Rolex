@@ -27,7 +27,8 @@ Demonstrate the role of recommendation systems in modern platforms:
 Highlight the importance of advanced algorithms, such as collaborative filtering and content-based techniques, in addressing challenges like information overload. This project aims to illustrate how such systems can transform the way users interact with and explore large collections of resources.
 
 # 3. Méthodologie
-
+0.1592 --> 
+En regroupant les interactions multiples par utilisateur et item, puis en additionnant les timestamps, on capture l'intensité d'intérêt de chaque utilisateur pour chaque item, ce qui reflète son engagement. Si un utilisateur interagit plusieurs fois avec le même item à différents moments, cela indique un intérêt plus fort pour cet item. En attribuant un score basé sur cette somme, on donne plus d'importance aux items avec lesquels les utilisateurs ont été fortement engagés, ce qui améliore la pertinence des prédictions dans les recommandations.
 
 
 
