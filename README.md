@@ -5,22 +5,26 @@
 -Sasha Granelli 
 
 # 1. Introduction
-This project is part of a Data Science and Machine Learning course and focuses on developing a personalized recommendation system for a university library platform. The goal is to enhance the user experience by making it easier for users to discover books that align with their interests. Leveraging modern data science and machine learning techniques, this project highlights the role of recommendation technologies in improving digital services.
+In today’s digital age, recommendation systems have become indispensable tools for personalizing user experiences and making vast collections of content or products more accessible. This project, part of a Data Science and Machine Learning course, focuses on developing a personalized recommendation system for a university library. The goal is to enhance the user experience by helping students and researchers discover books that align with their interests and academic needs.
 
-The project adopts a practical approach to address a common challenge in digital environments: tailoring content to meet users' specific needs. By analyzing interactions between users and the library’s catalog, we have designed a solution capable of predicting reading preferences and providing targeted suggestions.
+Recommendation systems analyze user preferences and interactions to provide tailored suggestions. They are widely used across industries, from streaming platforms (Netflix, Spotify) to e-commerce (Amazon) and social media (YouTube, TikTok). These systems leverage powerful techniques, such as collaborative filtering, which identifies patterns in user behavior, and content-based filtering, which recommends items with similar attributes. By addressing challenges like information overload and offering personalized suggestions, these systems play a critical role in enriching user satisfaction.
 
-This fictitious project, designed to reflect real-world challenges, provides an opportunity to explore various aspects of recommendation systems, from data preparation to model implementation, while considering the impact on user experience. It also demonstrates the critical role of data in designing innovative technological solutions.
+This project applies these principles to a university library setting, where students and researchers often face the difficulty of navigating extensive catalogs. By analyzing interactions between users and the library’s collection, the system predicts reading preferences and delivers targeted book suggestions. This real-world-inspired challenge demonstrates the importance of recommendation systems in improving user engagement and highlights the critical role of data science in designing innovative solutions.
 
 # 2. Objectives
-The main objectives of this project are:
+The primary objectives of this project are:
 
-**Build a functional solution by applying data science skills:** Use user-book interaction data to develop an effective recommendation model. This includes data processing, model training, and result optimization to ensure relevant recommendations.
+Develop a functional recommendation system using data science techniques:
+Leverage user-book interaction data to design an efficient recommendation model. This includes data preprocessing, training algorithms, and optimizing results to ensure accuracy and relevance in the suggestions.
 
-**Tackle a concrete personalization challenge:** Develop a system capable of accurately predicting books that might interest a given user based on their history and the metadata of the library’s catalog. This challenge allows the application of advanced machine learning techniques while exploring their utility in a real-world context.
+Address a personalization challenge in a real-world scenario:
+Build a system capable of accurately predicting books that align with a user’s interests based on their interaction history and the metadata of the library’s catalog. This objective explores the potential of machine learning techniques in tackling personalization problems within an academic environment.
 
-**Enhance user experience:** Provide recommendations that increase engagement with the platform and simplify the discovery of relevant content. This objective emphasizes the connection between technology and user satisfaction in an educational setting.
+Improve the user experience for library users:
+Enhance engagement with the library’s platform by delivering recommendations that simplify the discovery of relevant content. By creating a user-friendly system, the project emphasizes how technology can bridge the gap between massive digital catalogs and individual user needs.
 
-By working within a fictitious yet representative framework, this project provides a unique opportunity to apply theoretical methods in a practical context. It demonstrates how artificial intelligence technologies can be leveraged to solve practical problems while fostering an enriched user experience.
+Demonstrate the role of recommendation systems in modern platforms:
+Highlight the importance of advanced algorithms, such as collaborative filtering and content-based techniques, in addressing challenges like information overload. This project aims to illustrate how such systems can transform the way users interact with and explore large collections of resources.
 
 # 3. Méthodologie
 
