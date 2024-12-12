@@ -1,11 +1,34 @@
-# UNIL_Rolex
+# DSML-Rolex-Project-difficulty-analysis
 
-#Team Members : 
+# Team Members : (photo) 
 -Vanessa Faller 
 -Sasha Granelli 
 
-#Project Description : 
-As part of our Data Mining and Machine Learning project, we are tasked with enhancing a university's library platform by developing a personalized book recommendation system. The system will use collaborative filtering techniques to analyze implicit feedback data and generate book suggestions based on the individual books preferences. By delivering more relevant and tailored recommendations, the system aims to boost user engagement and help users effortlessly discover books that align with their interests.
+# 1. Introduction
+This project is part of a Data Science and Machine Learning course and focuses on developing a personalized recommendation system for a university library platform. The goal is to enhance the user experience by making it easier for users to discover books that align with their interests. Leveraging modern data science and machine learning techniques, this project highlights the role of recommendation technologies in improving digital services.
+
+The project adopts a practical approach to address a common challenge in digital environments: tailoring content to meet users' specific needs. By analyzing interactions between users and the library’s catalog, we have designed a solution capable of predicting reading preferences and providing targeted suggestions.
+
+This fictitious project, designed to reflect real-world challenges, provides an opportunity to explore various aspects of recommendation systems, from data preparation to model implementation, while considering the impact on user experience. It also demonstrates the critical role of data in designing innovative technological solutions.
+
+# 2. Objectives
+The main objectives of this project are:
+
+**Build a functional solution by applying data science skills:** Use user-book interaction data to develop an effective recommendation model. This includes data processing, model training, and result optimization to ensure relevant recommendations.
+
+**Tackle a concrete personalization challenge:** Develop a system capable of accurately predicting books that might interest a given user based on their history and the metadata of the library’s catalog. This challenge allows the application of advanced machine learning techniques while exploring their utility in a real-world context.
+
+**Enhance user experience:** Provide recommendations that increase engagement with the platform and simplify the discovery of relevant content. This objective emphasizes the connection between technology and user satisfaction in an educational setting.
+
+By working within a fictitious yet representative framework, this project provides a unique opportunity to apply theoretical methods in a practical context. It demonstrates how artificial intelligence technologies can be leveraged to solve practical problems while fostering an enriched user experience.
+
+# 3. Méthodologie
+
+
+
+
+
+
 
 #Project structure : ?
 
