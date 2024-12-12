@@ -27,7 +27,15 @@ Demonstrate the role of recommendation systems in modern platforms:
 Highlight the importance of advanced algorithms, such as collaborative filtering and content-based techniques, in addressing challenges like information overload. This project aims to illustrate how such systems can transform the way users interact with and explore large collections of resources.
 
 # 3. Méthodologie
+## 3.1 Data Analysis
+Before predicting the books that might interest users, we thoroughly cleaned and preprocessed the data to ensure its quality and suitability for training the model. The dataset columns were renamed for better clarity, and key columns such as identifiers (user_id, item_id) and timestamps were converted into appropriate formats. Invalid data, such as incorrect timestamps or rows with missing values in essential columns, were removed. Text fields, such as titles and subjects, were also standardized to enhance the overall consistency of the data. This cleaning process was a key step in preparing reliable and usable data for the recommendation model.
 
+Before starting the processing steps, we reviewed the Excel files to familiarize ourselves with the structure and content of the data, which helped us better understand the available features. Finally, the Kaggle competition required a specific format for submitting predictions. At each stage, we ensured that our results strictly adhered to this format to guarantee compatibility with the evaluation system.
+
+Here are the three datasets we received at the start of the project : 
+**DATAAAAAAAAAAA sous forme de tableau comme chez Dimitri !!!!!!!!!!!!!!!!!!!!!!!!!!!**
+
+# Analyse de la progression à travers les codes. 
 
 We improved our predictions by moving from the first code, based on user-to-user similarity, to the second code, which uses a user-item matrix built from interaction timestamps. The first code only accounted for binary interactions (1 or 0), which overly simplified the data and did not truly reflect user behaviors, leading to approximate similarities and less relevant recommendations. In the second code, the timestamps indirectly prioritize items with multiple interactions, even though summing them is not ideal for capturing real interest since they only represent the dates and times of interactions. However, this method is more effective because it does not rely on user similarity calculations, which are often biased or computationally expensive, and better highlights frequently accessed items. While this code represents an improvement, there are still areas to refine, such as accounting for recent interactions or incorporating content-based approaches to diversify recommendations.
 
