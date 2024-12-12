@@ -27,8 +27,14 @@ Demonstrate the role of recommendation systems in modern platforms:
 Highlight the importance of advanced algorithms, such as collaborative filtering and content-based techniques, in addressing challenges like information overload. This project aims to illustrate how such systems can transform the way users interact with and explore large collections of resources.
 
 # 3. Méthodologie
-0.1592 --> 
-En regroupant les interactions multiples par utilisateur et item, puis en additionnant les timestamps, on capture l'intensité d'intérêt de chaque utilisateur pour chaque item, ce qui reflète son engagement. Si un utilisateur interagit plusieurs fois avec le même item à différents moments, cela indique un intérêt plus fort pour cet item. En attribuant un score basé sur cette somme, on donne plus d'importance aux items avec lesquels les utilisateurs ont été fortement engagés, ce qui améliore la pertinence des prédictions dans les recommandations.
+
+
+We improved our predictions by moving from the first code, based on user-to-user similarity, to the second code, which uses a user-item matrix built from interaction timestamps. The first code only accounted for binary interactions (1 or 0), which overly simplified the data and did not truly reflect user behaviors, leading to approximate similarities and less relevant recommendations. In the second code, the timestamps indirectly prioritize items with multiple interactions, even though summing them is not ideal for capturing real interest since they only represent the dates and times of interactions. However, this method is more effective because it does not rely on user similarity calculations, which are often biased or computationally expensive, and better highlights frequently accessed items. While this code represents an improvement, there are still areas to refine, such as accounting for recent interactions or incorporating content-based approaches to diversify recommendations.
+
+
+
+(0.1592 --> (pour la compréhension à supprimer !!)
+En regroupant les interactions multiples par utilisateur et item, puis en additionnant les timestamps, on capture l'intensité d'intérêt de chaque utilisateur pour chaque item, ce qui reflète son engagement. Si un utilisateur interagit plusieurs fois avec le même item à différents moments, cela indique un intérêt plus fort pour cet item. En attribuant un score basé sur cette somme, on donne plus d'importance aux items avec lesquels les utilisateurs ont été fortement engagés, ce qui améliore la pertinence des prédictions dans les recommandations.)
 
 
 
