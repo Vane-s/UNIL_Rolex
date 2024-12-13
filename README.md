@@ -92,15 +92,19 @@ Finally, the top 10 most relevant recommendations for each user were generated b
 ## 3.3 Advancing to a More Sophisticated Model
 de 0.1452 à 10.1592 : We improved our predictions by moving from the first code, based on user-to-user similarity, to the second code, which uses a user-item matrix built from interaction timestamps. The first code only accounted for binary interactions (1 or 0), which overly simplified the data and did not truly reflect user behaviors, leading to approximate similarities and less relevant recommendations. In the second code, the timestamps indirectly prioritize items with multiple interactions, even though summing them is not ideal for capturing real interest since they only represent the dates and times of interactions. However, this method is more effective because it does not rely on user similarity calculations, which are often biased or computationally expensive, and better highlights frequently accessed items. While this code represents an improvement, there are still areas to refine, such as accounting for recent interactions or incorporating content-based approaches to diversify recommendations.
 
+de 0.1592 à 0.1694 : 
 
 
 (0.1592 --> (pour la compréhension à supprimer !!)
 En regroupant les interactions multiples par utilisateur et item, puis en additionnant les timestamps, on capture l'intensité d'intérêt de chaque utilisateur pour chaque item, ce qui reflète son engagement. Si un utilisateur interagit plusieurs fois avec le même item à différents moments, cela indique un intérêt plus fort pour cet item. En attribuant un score basé sur cette somme, on donne plus d'importance aux items avec lesquels les utilisateurs ont été fortement engagés, ce qui améliore la pertinence des prédictions dans les recommandations.)
 
+In the third code, we introduced several improvements to enhance the prediction quality compared to the second code. One of the major enhancements is the use of time decay, which incorporates the notion of recency into interactions. Unlike the second code, which relied solely on the raw sum of timestamps to measure interaction intensity, the third code applies an exponentially decreasing weighting based on the age of interactions. This approach prioritizes recent interactions, which are more representative of users' current preferences, while reducing the influence of older interactions. By combining this weighting with the frequency of interactions, the model reflects both users' overall engagement and their current tastes, making the recommendations more dynamic and relevant.
 
+Additionally, we adopted a hybrid approach that combines two types of similarities: user-to-user and item-to-item. User-to-user similarity identifies users with similar preferences, while item-to-item similarity highlights items often consumed together or sharing similar characteristics. These similarities, calculated using cosine similarity, enrich the recommendations by capturing both collective behaviors and direct relationships between items.
 
+To balance the contributions of these two approaches, we introduced a weighted hybrid model. This model dynamically adjusts the weights assigned to each similarity type (e.g., 70% for user-to-user and 30% for item-to-item), allowing us to optimize recommendations based on the available data. We also manually fine-tuned these weights to assess their impact on prediction quality, achieving our best prediction score of 0.1694 with a specific weighting. This highlights the importance of precise adjustments to maximize performance.
 
-
+These improvements allowed us to increase the prediction score from 0.1592 in the second code to 0.1694 with the third model. This progress demonstrates the importance of incorporating factors such as interaction recency, fine-grained user and item similarities, and a flexible balance between the two approaches. While this model is effective, there are still opportunities for improvement, such as integrating item metadata or exploring advanced machine learning models to achieve even better results.
 
 #Project structure : ?
 
