@@ -5,6 +5,7 @@
 -Sasha Granelli 
 
 # 1. Introduction
+
 In today’s digital age, recommendation systems have become indispensable tools for personalizing user experiences and making vast collections of content or products more accessible. This project, part of a Data Science and Machine Learning course, focuses on developing a personalized recommendation system for a university library. The goal is to enhance the user experience by helping students and researchers discover books that align with their interests and academic needs.
 
 Recommendation systems analyze user preferences and interactions to provide tailored suggestions. They are widely used across industries, from streaming platforms (Netflix, Spotify) to e-commerce (Amazon) and social media (YouTube, TikTok). These systems leverage powerful techniques, such as collaborative filtering, which identifies patterns in user behavior, and content-based filtering, which recommends items with similar attributes. By addressing challenges like information overload and offering personalized suggestions, these systems play a critical role in enriching user satisfaction.
@@ -12,6 +13,7 @@ Recommendation systems analyze user preferences and interactions to provide tail
 This project applies these principles to a university library setting, where students and researchers often face the difficulty of navigating extensive catalogs. By analyzing interactions between users and the library’s collection, the system predicts reading preferences and delivers targeted book suggestions. This real-world-inspired challenge demonstrates the importance of recommendation systems in improving user engagement and highlights the critical role of data science in designing innovative solutions.
 
 # 2. Objectives
+
 The primary objectives of this project are:
 
 Develop a functional recommendation system using data science techniques:
@@ -27,6 +29,7 @@ Demonstrate the role of recommendation systems in modern platforms:
 Highlight the importance of advanced algorithms, such as collaborative filtering and content-based techniques, in addressing challenges like information overload. This project aims to illustrate how such systems can transform the way users interact with and explore large collections of resources.
 
 # 3. Méthodologie
+
 ## 3.1 Data Analysis
 Before predicting the books that might interest users, we thoroughly cleaned and preprocessed the data to ensure its quality and suitability for training the model. The dataset columns were renamed for better clarity, and key columns such as identifiers (user_id, item_id) and timestamps were converted into appropriate formats. Invalid data, such as incorrect timestamps or rows with missing values in essential columns, were removed. Text fields, such as titles and subjects, were also standardized to enhance the overall consistency of the data. This cleaning process was a key step in preparing reliable and usable data for the recommendation model.
 
@@ -35,8 +38,35 @@ Before starting the processing steps, we reviewed the Excel files to familiarize
 Here are the three datasets we received at the start of the project : 
 **DATAAAAAAAAAAA sous forme de tableau comme chez Dimitri !!!!!!!!!!!!!!!!!!!!!!!!!!!**
 
-# Analyse de la progression à travers les codes. 
+## 3.2 Model exploration
+The code implements a recommendation system based on collaborative filtering. It starts by importing essential libraries such as NumPy, Pandas, and sklearn, followed by loading two datasets: user-book interactions and book information. The interactions are sorted by user and timestamp to maintain chronological order, allowing the model to capture the evolution of user preferences.
 
+The dataset was then split into training and test sets in a specific way: a new column called pct_rank was created to compute the relative rank of each interaction for a user based on the timestamps. This ensures that the most recent interactions for each user are included in the test set, simulating a realistic scenario where recent interactions are used to evaluate the model’s ability to predict future interactions.
+
+A user-item matrix was then constructed from the data. Each row represents a user, each column a book, and the values indicate a binary interaction (1 for an interaction, 0 otherwise). This matrix is the foundation of the collaborative filtering algorithms, as it encodes the interaction history between users and books.
+
+Two types of similarity matrices were calculated using cosine similarity:
+
+The item-item similarity matrix, which measures the similarity between books based on user interactions. The idea is that books with similar interaction patterns are likely to be enjoyed by the same users.
+The user-user similarity matrix, which measures the similarity between users based on their interactions with books. This helps identify users with similar tastes.
+Two prediction methods were used to estimate future interactions:
+
+Item-based predictions, which calculate the likelihood of interaction by taking a weighted sum of interactions with similar books.
+User-based predictions, which estimate interactions based on the preferences of other users with similar behaviors.
+To evaluate the quality of the recommendations, the Precision@K and Recall@K metrics were calculated to compare the performance of the item-based and user-based approaches. The user-based approach performed slightly better on both metrics, as shown in the table below.
+
+## Technique, Precision and Recall :
+|   Technique          |   Precision@10   |   Recall@10   |  
+|----------------------|------------------|---------------|  
+| User-to-User CF      | 0.0565           | 0.2906       |  
+| Item-to-Item CF      | 0.0556           | 0.2639       |  
+| Optimized Model      | 0.1452           | 0.1452        |  
+
+Next, we attempted an initial prediction by training the model only on the training data. The generated predictions were saved in a CSV file and submitted to the competition, which calculated a precision score of 0.1241 for our predictions. In response, we decided to retrain the model on the entire dataset (including both training and test sets). Once the new predictions were submitted, the resulting CSV file achieved an improved precision score of 0.1452. This improvement is due to the model having access to the full dataset, which allowed it to learn better and make more accurate predictions.
+
+Finally, the top 10 most relevant recommendations for each user were generated by sorting the prediction scores in descending order. These recommendations were exported to a CSV file, adhering to the requirements of a Kaggle submission or other external evaluations. This recommendation system demonstrates an efficient and well-structured solution for delivering personalized recommendations based on user preferences.
+
+## 3.3 Advancing to a More Sophisticated Model
 We improved our predictions by moving from the first code, based on user-to-user similarity, to the second code, which uses a user-item matrix built from interaction timestamps. The first code only accounted for binary interactions (1 or 0), which overly simplified the data and did not truly reflect user behaviors, leading to approximate similarities and less relevant recommendations. In the second code, the timestamps indirectly prioritize items with multiple interactions, even though summing them is not ideal for capturing real interest since they only represent the dates and times of interactions. However, this method is more effective because it does not rely on user similarity calculations, which are often biased or computationally expensive, and better highlights frequently accessed items. While this code represents an improvement, there are still areas to refine, such as accounting for recent interactions or incorporating content-based approaches to diversify recommendations.
 
 
@@ -54,12 +84,6 @@ En regroupant les interactions multiples par utilisateur et item, puis en additi
 #Important link : 
 Link to download the folder with our app and all the models : 
 
-## Technique, Precision and Recall :
-|   Technique          |   Precision@10   |   Recall@10   |  
-|----------------------|------------------|---------------|  
-| User-to-User CF      | 0.0565           | 0.2906       |  
-| Item-to-Item CF      | 0.0556           | 0.2639       |  
-| Optimized Model      | 0.1452           | 0.1452        |  
 
 ##Data Exploration (EDA):
 ##1. Interaction Summary:
