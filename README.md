@@ -15,17 +15,13 @@ This project applies these principles to a university library setting, where stu
 
 The primary objectives of this project are:
 
-Develop a functional recommendation system using data science techniques:
-Leverage user-book interaction data to design an efficient recommendation model. This includes data preprocessing, training algorithms, and optimizing results to ensure accuracy and relevance in the suggestions.
+- **Develop a functional recommendation system using data science techniques:** Leverage user-book interaction data to design an efficient recommendation model. This includes data preprocessing, training algorithms, and optimizing results to ensure accuracy and relevance in the suggestions.
 
-Address a personalization challenge in a real-world scenario:
-Build a system capable of accurately predicting books that align with a user’s interests based on their interaction history and the metadata of the library’s catalog. This objective explores the potential of machine learning techniques in tackling personalization problems within an academic environment.
+- **Address a personalization challenge in a real-world scenario:** Build a system capable of accurately predicting books that align with a user’s interests based on their interaction history and the metadata of the library’s catalog. This objective explores the potential of machine learning techniques in tackling personalization problems within an academic environment.
 
-Improve the user experience for library users:
-Enhance engagement with the library’s platform by delivering recommendations that simplify the discovery of relevant content. By creating a user-friendly system, the project emphasizes how technology can bridge the gap between massive digital catalogs and individual user needs.
+- **Improve the user experience for library users:** Enhance engagement with the library’s platform by delivering recommendations that simplify the discovery of relevant content. By creating a user-friendly system, the project emphasizes how technology can bridge the gap between massive digital catalogs and individual user needs.
 
-Demonstrate the role of recommendation systems in modern platforms:
-Highlight the importance of advanced algorithms, such as collaborative filtering and content-based techniques, in addressing challenges like information overload. This project aims to illustrate how such systems can transform the way users interact with and explore large collections of resources.
+- **Demonstrate the role of recommendation systems in modern platforms:** Highlight the importance of advanced algorithms, such as collaborative filtering and content-based techniques, in addressing challenges like information overload. This project aims to illustrate how such systems can transform the way users interact with and explore large collections of resources.
 
 # 3. Methodology
 
