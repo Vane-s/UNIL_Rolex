@@ -36,9 +36,8 @@ Before predicting the books that might interest users, we thoroughly cleaned and
 Before starting the processing steps, we reviewed the Excel files to familiarize ourselves with the structure and content of the data, which helped us better understand the available features. Finally, the Kaggle competition required a specific format for submitting predictions. At each stage, we ensured that our results strictly adhered to this format to guarantee compatibility with the evaluation system.
 
 Here are the three datasets we received at the start of the project : 
-**DATAAAAAAAAAAA sous forme de tableau comme chez Dimitri !!!!!!!!!!!!!!!!!!!!!!!!!!!**
 
-interactions_train.csv : interactions between a user and a book and the timestamp of the interaction 
+**interactions_train.csv** : interactions between a user and a book and the timestamp of the interaction 
 
 |      u               |      i           |   t           |  
 |----------------------|------------------|---------------|  
@@ -46,14 +45,15 @@ interactions_train.csv : interactions between a user and a book and the timestam
 | 142                  | 1964             | 1679585406.0  |  
 | ...                  | ...              | ...           | 
 
-Items.csv : books metadata 
+**items.csv** : books metadata 
+
 | Title | Author | ISBN Valid | Publisher | Subjects | i |
 |:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
 |Classification décimale universelle : édition abrégée | NaN | 9782871303336; 2871303339 | Ed du CEFAL | Classification décimale universelle; Indexation (documentation); classification | 0|
 | Les interactions dans l'enseignement des langues : agir professoral et pratiques de classe | Cicurel, Francine, 1947- | 9782278058327; 2278058320 | Didier | didactique--langue étrangère - enseignement; didactique--langue - | 1 |
 | ... | ... | ... | ... | ... | ... |
 
-sample_submission-csv : exemple of submission for the Kaggle competition 
+**sample_submission-csv** : exemple of submission for the Kaggle competition 
 
 | user_id | recommendation |
 |:---------:|:---------:|
