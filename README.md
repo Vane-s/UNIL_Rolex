@@ -47,11 +47,11 @@ interactions_train.csv : interactions between a user and a book and the timestam
 | ...                  | ...              | ...           | 
 
 Items.csv : books metadata 
-Models	Logistic Regression	Multinomial NB	 NeuralNetwork	CamenBERT
-Precision	0.4470	0.45014	0.4354	0.9520
-Recall	0.4541	0.4125	0.4062	0.9522
-F1-score	0.4446	0.40452	0.40527	0.9520
-Accuracy	0.4541	0.4125	0.4062	0.9518
+| Title | Author | ISBN Valid | Publisher | Subjects | i |
+|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
+|Classification décimale universelle : édition abrégée | | 9782871303336; 2871303339 | Ed du CEFAL | Classification décimale universelle; Indexation (documentation); classification | 0|
+| Les interactions dans l'enseignement des langues : agir professoral et pratiques de classe | Cicurel, Francine, 1947- | 9782278058327; 2278058320 | Didier | didactique--langue étrangère - enseignement; didactique--langue - | 1 |
+| ... | ... | ... | ... | ... | ... |
 
 
 ## 3.2 Model exploration
