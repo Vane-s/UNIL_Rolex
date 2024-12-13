@@ -1,4 +1,4 @@
-# DSML-Rolex-Project-difficulty-analysis
+# DSML-Rolex-Project-Recommendation System 
 
 # Team Members : (photo) 
 -Vanessa Faller 
