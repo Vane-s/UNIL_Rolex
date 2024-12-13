@@ -41,28 +41,27 @@ Here are the three datasets we received at the start of the project :
 ## 3.2 Model exploration
 The code implements a recommendation system based on collaborative filtering. It starts by importing essential libraries such as NumPy, Pandas, and sklearn, followed by loading two datasets: user-book interactions and book information. The interactions are sorted by user and timestamp to maintain chronological order, allowing the model to capture the evolution of user preferences.
 
-The dataset was then split into training and test sets in a specific way: a new column called pct_rank was created to compute the relative rank of each interaction for a user based on the timestamps. This ensures that the most recent interactions for each user are included in the test set, simulating a realistic scenario where recent interactions are used to evaluate the model’s ability to predict future interactions.
+The dataset was then split into training and test sets in a specific way: a new column called pct_rank was created to compute the relative rank of each interaction for a user based on the timestamps. This ensures that the most recent interactions for each user are included in the test set, simulating a realistic scenario where recent interactions are used to evaluate the model’s ability to predict future interactions.- 
 
 A user-item matrix was then constructed from the data. Each row represents a user, each column a book, and the values indicate a binary interaction (1 for an interaction, 0 otherwise). This matrix is the foundation of the collaborative filtering algorithms, as it encodes the interaction history between users and books.
 
 Two types of similarity matrices were calculated using cosine similarity:
 
-The item-item similarity matrix, which measures the similarity between books based on user interactions. The idea is that books with similar interaction patterns are likely to be enjoyed by the same users.
-The user-user similarity matrix, which measures the similarity between users based on their interactions with books. This helps identify users with similar tastes.
+- **The item-item similarity matrix**, which measures the similarity between books based on user interactions. The idea is that books with similar interaction patterns are likely to be enjoyed by the same users.
+- **The user-user similarity matrix**, which measures the similarity between users based on their interactions with books. This helps identify users with similar tastes.
+
 Two prediction methods were used to estimate future interactions:
+- **Item-based predictions**, which calculate the likelihood of interaction by taking a weighted sum of interactions with similar books.
+- **User-based predictions**, which estimate interactions based on the preferences of other users with similar behaviors.
+To evaluate the quality of the recommendations, the **Precision@K** and **Recall@K** metrics were calculated to compare the performance of the item-based and user-based approaches. The **user-based approach** performed slightly better on both metrics, as shown in the table below.
 
-Item-based predictions, which calculate the likelihood of interaction by taking a weighted sum of interactions with similar books.
-User-based predictions, which estimate interactions based on the preferences of other users with similar behaviors.
-To evaluate the quality of the recommendations, the Precision@K and Recall@K metrics were calculated to compare the performance of the item-based and user-based approaches. The user-based approach performed slightly better on both metrics, as shown in the table below.
-
-## Technique, Precision and Recall :
 |   Technique          |   Precision@10   |   Recall@10   |  
 |----------------------|------------------|---------------|  
 | User-to-User CF      | 0.0565           | 0.2906       |  
 | Item-to-Item CF      | 0.0556           | 0.2639       |  
 | Optimized Model      | 0.1452           | 0.1452        |  
 
-Next, we attempted an initial prediction by training the model only on the training data. The generated predictions were saved in a CSV file and submitted to the competition, which calculated a precision score of 0.1241 for our predictions. In response, we decided to retrain the model on the entire dataset (including both training and test sets). Once the new predictions were submitted, the resulting CSV file achieved an improved precision score of 0.1452. This improvement is due to the model having access to the full dataset, which allowed it to learn better and make more accurate predictions.
+Next, we attempted an initial prediction by training the model only on the training data. The generated predictions were saved in a CSV file and submitted to the competition, which calculated a precision score of **0.1241** for our predictions. In response, we decided to retrain the model on the entire dataset (including both training and test sets). Once the new predictions were submitted, the resulting CSV file achieved an improved precision score of **0.1452**. This improvement is due to the model having access to the full dataset, which allowed it to learn better and make more accurate predictions.
 
 Finally, the top 10 most relevant recommendations for each user were generated by sorting the prediction scores in descending order. These recommendations were exported to a CSV file, adhering to the requirements of a Kaggle submission or other external evaluations. This recommendation system demonstrates an efficient and well-structured solution for delivering personalized recommendations based on user preferences.
 
