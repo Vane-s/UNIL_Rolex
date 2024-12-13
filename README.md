@@ -47,15 +47,11 @@ interactions_train.csv : interactions between a user and a book and the timestam
 | ...                  | ...              | ...           | 
 
 Items.csv : books metadata 
-|      Title           |   Author         |   ISBN Valid  |  Publisher  | Subjects     | i   |
-|----------------------|------------------|---------------|  
-| Classification 
-décimale 
-universelle : 
-édition abrégée        |                  | 9782871303336;| Ed du CEFAL | 
-                                            2871303339
-| 142                  | 1964             | 1679585406.0  |  
-| ...                  | ...              | ...           | 
+Models	Logistic Regression	Multinomial NB	 NeuralNetwork	CamenBERT
+Precision	0.4470	0.45014	0.4354	0.9520
+Recall	0.4541	0.4125	0.4062	0.9522
+F1-score	0.4446	0.40452	0.40527	0.9520
+Accuracy	0.4541	0.4125	0.4062	0.9518
 
 
 ## 3.2 Model exploration
