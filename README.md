@@ -101,11 +101,15 @@ To improve prediction quality, we focused on leveraging item textual metadata an
 
 By testing another pre-trained model, **"multi-qa-MiniLM-L6-cos-v1"**, we achieved a slight improvement in the prediction score, increasing it from **0.1695 to 0.1696**. This model provided slightly more accurate embeddings to evaluate textual similarities between items. These similarities helped identify items sharing semantic features, such as books in the same genre, by the same author, or addressing similar themes. However, the improvement in prediction quality was not as significant as initially expected with the addition of embeddings to our code. This indicates that, while leveraging metadata enhances recommendations, further adjustments or complementary approaches might be necessary to maximize the impact of these embeddings on the overall model.
 
-
-
 # 4. Challenge
+One of the main challenges was to effectively combine different recommendation approaches. Collaborative filtering (user-to-user and item-to-item) helps identify relationships between users or items, but it becomes limited when dealing with sparse data or new items without interaction history. To address these limitations, we integrated a semantic dimension based on textual metadata, which added complexity. This required generating textual embeddings, normalizing them, and adjusting the weights between user, item, and textual similarities, all while maintaining a balance between these components to ensure relevant recommendations.
+
+Additionally, significantly improving the prediction scores proved to be more challenging than expected. While introducing advanced techniques such as time decay and textual embeddings resulted in improvements, the gains were smaller than anticipated. This reflects the limitations of the data used, particularly its sparsity and the absence of explicit user feedback. Achieving better predictions required careful fine-tuning of weights and parameters, as well as an in-depth exploration to maximize the potential of each component in the model.
 
 # 5. Conclusion
+This project demonstrated the potential of recommendation systems to improve user experiences in academic environments, such as university libraries. By evolving our model, we transitioned from simple collaborative filtering to a hybrid approach incorporating time decay and textual embeddings. These enhancements allowed us to increase the accuracy of predictions, achieving a score improvement from 0.1241 to 0.1696 by combining user behaviors with item characteristics to deliver more personalized and relevant recommendations.
+
+However, despite these advancements, our final model highlights certain limitations, such as the modest improvement brought by textual embeddings. This indicates that there are still avenues to explore to fully leverage metadata. Moving forward, we could integrate more advanced learning techniques, such as hybrid neural models, or utilize user feedback to refine predictions in real-time. In conclusion, this project illustrates how recommendation systems can simplify access to large catalogs and meet specific user needs while emphasizing the importance of data science in creating more effective and personalized experiences.
 
 ## 5.1 Kaggle Competition Results
 
