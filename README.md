@@ -49,10 +49,17 @@ interactions_train.csv : interactions between a user and a book and the timestam
 Items.csv : books metadata 
 | Title | Author | ISBN Valid | Publisher | Subjects | i |
 |:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
-|Classification décimale universelle : édition abrégée | | 9782871303336; 2871303339 | Ed du CEFAL | Classification décimale universelle; Indexation (documentation); classification | 0|
+|Classification décimale universelle : édition abrégée | NaN | 9782871303336; 2871303339 | Ed du CEFAL | Classification décimale universelle; Indexation (documentation); classification | 0|
 | Les interactions dans l'enseignement des langues : agir professoral et pratiques de classe | Cicurel, Francine, 1947- | 9782278058327; 2278058320 | Didier | didactique--langue étrangère - enseignement; didactique--langue - | 1 |
 | ... | ... | ... | ... | ... | ... |
 
+sample_submission-csv : exemple of submission for the Kaggle competition 
+
+| user_id | recommendation |
+|:---------:|:---------:|
+| 0 | 3758 11248 9088 9895 5101 6074 9295 14050 10961 8240 |
+| 1 | 3263 726 1589 14911 6432 10897 6484 7961 8249 3567 |
+| ... | ... |
 
 ## 3.2 Model exploration
 The code implements a recommendation system based on collaborative filtering. It starts by importing essential libraries such as NumPy, Pandas, and sklearn, followed by loading two datasets: user-book interactions and book information. The interactions are sorted by user and timestamp to maintain chronological order, allowing the model to capture the evolution of user preferences.
