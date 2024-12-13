@@ -53,6 +53,7 @@ Two types of similarity matrices were calculated using cosine similarity:
 Two prediction methods were used to estimate future interactions:
 - **Item-based predictions**, which calculate the likelihood of interaction by taking a weighted sum of interactions with similar books.
 - **User-based predictions**, which estimate interactions based on the preferences of other users with similar behaviors.
+
 To evaluate the quality of the recommendations, the **Precision@K** and **Recall@K** metrics were calculated to compare the performance of the item-based and user-based approaches. The **user-based approach** performed slightly better on both metrics, as shown in the table below.
 
 |   Technique          |   Precision@10   |   Recall@10   |  
