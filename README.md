@@ -1,8 +1,7 @@
 # DSML-Rolex-Project-Recommendation System 
 
-# Team Members : (photo) 
--Vanessa Faller 
--Sasha Granelli 
+ (photo) 
+
 
 # 1. Introduction
 
@@ -28,7 +27,7 @@ Enhance engagement with the library’s platform by delivering recommendations t
 Demonstrate the role of recommendation systems in modern platforms:
 Highlight the importance of advanced algorithms, such as collaborative filtering and content-based techniques, in addressing challenges like information overload. This project aims to illustrate how such systems can transform the way users interact with and explore large collections of resources.
 
-# 3. Méthodologie
+# 3. Methodology
 
 ## 3.1 Data Analysis
 Before predicting the books that might interest users, we thoroughly cleaned and preprocessed the data to ensure its quality and suitability for training the model. The dataset columns were renamed for better clarity, and key columns such as identifiers (user_id, item_id) and timestamps were converted into appropriate formats. Invalid data, such as incorrect timestamps or rows with missing values in essential columns, were removed. Text fields, such as titles and subjects, were also standardized to enhance the overall consistency of the data. This cleaning process was a key step in preparing reliable and usable data for the recommendation model.
@@ -61,7 +60,7 @@ Here are the three datasets we received at the start of the project :
 | 1 | 3263 726 1589 14911 6432 10897 6484 7961 8249 3567 |
 | ... | ... |
 
-## 3.2 Model exploration
+## 3.2 Model Exploration
 The code implements a recommendation system based on collaborative filtering. It starts by importing essential libraries such as NumPy, Pandas, and sklearn, followed by loading two datasets: user-book interactions and book information. The interactions are sorted by user and timestamp to maintain chronological order, allowing the model to capture the evolution of user preferences.
 
 The dataset was then split into training and test sets in a specific way: a new column called pct_rank was created to compute the relative rank of each interaction for a user based on the timestamps. This ensures that the most recent interactions for each user are included in the test set, simulating a realistic scenario where recent interactions are used to evaluate the model’s ability to predict future interactions.- 
@@ -101,7 +100,7 @@ To balance the contributions of these two approaches, we introduced a **weighted
 
 These improvements allowed us to increase the prediction score from 0.1592 in the second code to 0.1694 with the third model. This progress demonstrates the importance of incorporating factors such as interaction recency, fine-grained user and item similarities, and a flexible balance between the two approaches. While this model is effective, there are still opportunities for improvement, such as integrating item metadata or exploring advanced machine learning models to achieve even better results.
 
-**3.4 Our Best Model**
+## 3.4 Our Best Model
 One of the most important enhancements we developped was the introduction of textual embeddings. While our previous code rely on user-item interactions for recommendations, the second code adds text processing to capture the semantic similarity between items. Using the SentenceTransformer model, each book is transformed into a numerical vector (embedding) that captures the textual content of the title, author, and subjects of the item. This process allows the model to measure the similarity between books based not only on user behavior but also on their content.
 The cosine similarity is then used to measure how similar the items are to each other based on these embeddings. This approach enriches the model by allowing it to understand not just user interactions but also the content of the items, leading to more nuanced recommendations. 
 
@@ -115,52 +114,21 @@ To improve prediction quality, we focused on leveraging item textual metadata an
 
 By testing another pre-trained model, **"multi-qa-MiniLM-L6-cos-v1"**, we achieved a slight improvement in the prediction score, increasing it from **0.1695 to 0.1696**. This model provided slightly more accurate embeddings to evaluate textual similarities between items. These similarities helped identify items sharing semantic features, such as books in the same genre, by the same author, or addressing similar themes. However, the improvement in prediction quality was not as significant as initially expected with the addition of embeddings to our code. This indicates that, while leveraging metadata enhances recommendations, further adjustments or complementary approaches might be necessary to maximize the impact of these embeddings on the overall model.
 
-#Project structure : ?
-
-#Important link : 
-Link to download the folder with our app and all the models : 
 
 
-##Data Exploration (EDA):
-##1. Interaction Summary:
--Users in the Platform: 7,838
--Books with Interactions: 15,109
--Total Books Available: 15,291
--Total User Interactions: 87,047
+# 4. Challenge
 
-##2. Data Visualization:
-In order to investigate user engagement trends, different types of visualizations were developed:
--Interaction Heatmap: This heatmap highlights the distribution of interactions between users and books. It reveals both sparse and dense areas of engagement, providing insights into which books are most frequently interacted with and where user interest is concentrated.
--Histogram of Interactions: This histogram visualizes the number of books interacted with by each user. It shows a highly uneven distribution, with a large number of users engaging with only a small subset of books, while a few users interact with a significantly larger number. This pattern highlights the variability in user behavior and engagement.
+# 5. Conclusion
 
-##3. Key Findings:
--Popular books tend to receive more interactions, resulting in their overrepresentation in the dataset compared to less frequently interacted-with books.
--Some users interact with the same book multiple times, suggesting repeated engagement or interest.
--The dataset is extensive, covering a large number of books, but occasionally lacks certain details, such as author information. This underscores the importance of developing a strong recommendation model that can still deliver effective suggestions despite these gaps.
+## 5.1 Kaggle Competition Results
 
-#3.4 Best Model : ?
 
-#Data enhancement: 
-To enriche prediction accuracy, we can augment our dataset by using an API to gather additional details, such as book descriptions. This will allow the model to access a more comprehensive set of information, facilitating the use of text embedding for more accurate and insightful recommendations.
-
-#Leaderboard : 
-After implementing and testing these different models, we achieved a score of 0.1452 upon submitting our CSV file on Kaggle. This marks a noticeable improvement compared to our earlier score of 0.1241, which was obtained prior to training our model on the complete dataset. The increase in performance highlights the impact of using the full dataset for training, allowing the model to better capture the underlying patterns and improve its predictions.
-
-#Steps to follow:
--Clean the data
--Try different algorithms
--Calculate the accuracy of each algorithm using the train and test datasets
--Select the algorithms with the best accuracy
--Test the algorithms individually (submit the predictions for each algorithm separately on Kaggle)
--Test the combination of the two algorithms with the best accuracy (hybrid model)
--Submit the hybrid model's predictions
-
-#Future work: 
--Text embedding / API
--Neural Network 
--Classification ? 
-
-# Video Presentation:
+## 5.2 YouTube Video :
 [Insert link to your presentation video]
+
+# 6. Team
+Our project was led by Sasha Granelli and Vanessa Faller, Master's students specializing in Law, criminality and security of information.
+
+
 
 
