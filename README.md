@@ -101,6 +101,17 @@ To balance the contributions of these two approaches, we introduced a **weighted
 
 These improvements allowed us to increase the prediction score from 0.1592 in the second code to 0.1694 with the third model. This progress demonstrates the importance of incorporating factors such as interaction recency, fine-grained user and item similarities, and a flexible balance between the two approaches. While this model is effective, there are still opportunities for improvement, such as integrating item metadata or exploring advanced machine learning models to achieve even better results.
 
+**3.4 Our Best Model**
+One of the most important enhancements we developped was the introduction of textual embeddings. While our previous code rely on user-item interactions for recommendations, the second code adds text processing to capture the semantic similarity between items. Using the SentenceTransformer model, each book is transformed into a numerical vector (embedding) that captures the textual content of the title, author, and subjects of the item. This process allows the model to measure the similarity between books based not only on user behavior but also on their content.
+The cosine similarity is then used to measure how similar the items are to each other based on these embeddings. This approach enriches the model by allowing it to understand not just user interactions but also the content of the items, leading to more nuanced recommendations. 
+
+We continued to use interaction-based similarity, but also take a further step by introducing a third type of similarity: textual similarity between items. After generating textual embeddings for each item, we also calculated the cosine similarity between these embeddings. This allows the model to measure how similar items are based on their content, adding an extra layer of understanding.
+
+In the continuation of our code improvement, the fusion of predictions becomes more sophisticated. In addition to predictions based on user and item similarity, a third source of prediction was introduced: that based on textual similarity between items. The hybrid model combines these three sources by assigning specific weights to each one. This allows the model to better balance the contribution of each source depending on their relevance for the final recommendation.
+
+Before fusion, we normalizes each set of predictions using MinMaxScaler, a technique that scales the values to the range [0, 1]. This step is crucial to ensure that one source of predictions (item similarity) does not dominate the others, ensuring each source contributes equally to the final recommendation. This hybrid model is more flexible and can leverage various information sources to generate more accurate recommendations.
+
+
 #Project structure : ?
 
 #Important link : 
@@ -124,7 +135,7 @@ In order to investigate user engagement trends, different types of visualization
 -Some users interact with the same book multiple times, suggesting repeated engagement or interest.
 -The dataset is extensive, covering a large number of books, but occasionally lacks certain details, such as author information. This underscores the importance of developing a strong recommendation model that can still deliver effective suggestions despite these gaps.
 
-#Best Model : ?
+#3.4 Best Model : ?
 
 #Data enhancement: 
 To enriche prediction accuracy, we can augment our dataset by using an API to gather additional details, such as book descriptions. This will allow the model to access a more comprehensive set of information, facilitating the use of text embedding for more accurate and insightful recommendations.
