@@ -37,10 +37,13 @@ Before starting the processing steps, we reviewed the Excel files to familiarize
 
 Here are the three datasets we received at the start of the project : 
 **DATAAAAAAAAAAA sous forme de tableau comme chez Dimitri !!!!!!!!!!!!!!!!!!!!!!!!!!!**
-u	i	t
-4456	8581	1687541086.0
-142	1964	1679585406.0
-...	...	...
+
+|      u               |      i           |   t           |  
+|----------------------|------------------|---------------|  
+| 4456                 | 8581             | 1687541086.0  |  
+| 142                  | 1964             | 1679585406.0  |  
+| ...                  | ...              | ...           | 
+
 
 
 ## 3.2 Model exploration
