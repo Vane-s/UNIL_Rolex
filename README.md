@@ -82,8 +82,7 @@ To evaluate the quality of the recommendations, the **Precision@K** and **Recall
 |   Technique          |   Precision@10   |   Recall@10   |  
 |----------------------|------------------|---------------|  
 | User-to-User CF      | 0.0565           | 0.2906       |  
-| Item-to-Item CF      | 0.0556           | 0.2639       |  
-| Optimized Model      | 0.1452           | 0.1452        |  
+| Item-to-Item CF      | 0.0556           | 0.2639       |    
 
 Next, we attempted an initial prediction by training the model only on the training data. The generated predictions were saved in a CSV file and submitted to the competition, which calculated a precision score of **0.1241** for our predictions. In response, we decided to retrain the model on the entire dataset (including both training and test sets). Once the new predictions were submitted, the resulting CSV file achieved an improved precision score of **0.1452**. This improvement is due to the model having access to the full dataset, which allowed it to learn better and make more accurate predictions.
 
