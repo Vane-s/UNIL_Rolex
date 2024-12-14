@@ -111,7 +111,9 @@ Moreover, significantly improving prediction scores proved to be more challengin
 # 5. Conclusion
 This project demonstrated the potential of recommendation systems to improve user experiences in academic environments, such as university libraries. By evolving our model, we transitioned from simple collaborative filtering to a hybrid approach incorporating time decay and textual embeddings. These enhancements allowed us to increase the accuracy of predictions, achieving a score improvement from **0.1452 to 0.1698** by combining user behaviors with item characteristics to deliver more personalized and relevant recommendations.
 
-However, despite these advancements, our final model highlights certain limitations, such as the modest improvement brought by textual embeddings. This indicates that there are still avenues to explore to fully leverage metadata. Moving forward, we could integrate more advanced learning techniques, such as hybrid neural models, or utilize user feedback to refine predictions in real-time. In conclusion, this project illustrates how recommendation systems can simplify access to large catalogs and meet specific user needs while emphasizing the importance of data science in creating more effective and personalized experiences.
+However, despite these advancements, our final model highlights certain limitations, such as the modest improvement brought by textual embeddings. This indicates that there are still avenues to explore to fully leverage metadata. Moving forward, we could integrate more advanced learning techniques, such as hybrid neural models, or utilize user feedback to refine predictions in real-time.
+
+In conclusion, this project illustrates how recommendation systems can simplify access to large catalogs and meet specific user needs while emphasizing the importance of data science in creating more effective and personalized experiences.
 
 ## 5.1 Kaggle Competition Results
 
