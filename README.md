@@ -7,7 +7,7 @@
 
 # 1. Introduction
 
-In today’s digital age, recommendation systems have become indispensable tools for personalizing user experiences and making vast collections of content or products more accessible. This project, part of a Data Science and Machine Learning course, focuses on developing a personalized recommendation system for a university library. The goal is to enhance the user experience by helping students and researchers discover books that align with their interests and academic needs.
+In today’s digital age, recommendation systems have become indispensable tools for personalizing user experiences and making vast collections of content or products more accessible. This project, part of a Data Science and Machine Learning course, focuses on developing a personalized recommendation system for a university library. The goal is to enhance the user experience by helping students and library members discover books that align with their interests and academic needs.
 
 Recommendation systems analyze user preferences and interactions to provide tailored suggestions. They are widely used across industries, from streaming platforms (Netflix, Spotify) to e-commerce (Amazon) and social media (YouTube, TikTok). These systems leverage powerful techniques, such as collaborative filtering, which identifies patterns in user behavior, and content-based filtering, which recommends items with similar attributes. By addressing challenges like information overload and offering personalized suggestions, these systems play a critical role in enriching user satisfaction.
 
