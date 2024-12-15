@@ -119,7 +119,7 @@ In conclusion, this project illustrates how recommendation systems can simplify 
 
 
 ## 5.2 YouTube Video :
-[Insert link to your presentation video]
+https://youtu.be/tzqqeoCQHAg
 
 # 6. Team
 Our project was led by Sasha Granelli and Vanessa Faller, Master's students specializing in Law, criminality and security of information.
