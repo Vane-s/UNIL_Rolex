@@ -116,10 +116,12 @@ However, despite these advancements, our final model highlights certain limitati
 In conclusion, this project illustrates how recommendation systems can simplify access to large catalogs and meet specific user needs while emphasizing the importance of data science in creating more effective and personalized experiences.
 
 ## 5.1 Kaggle Competition Results
+![Screenshot 2024-12-15 154341](https://github.com/user-attachments/assets/78410be4-f2d7-4177-bd76-f157f052836c)
+
 
 
 ## 5.2 YouTube Video
-https://youtu.be/tzqqeoCQHAg
+We produced a YouTube video that provides an overview of our project, discusses our thought process, and features a demonstration of our Streamlit application: https://youtu.be/tzqqeoCQHAg
 
 # 6. Team
 Our project was led by Sasha Granelli and Vanessa Faller, Master's students specializing in Law, criminality and security of information.
