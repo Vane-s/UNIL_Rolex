@@ -1,0 +1,143 @@
+import streamlit as st
+import pandas as pd
+import os
+import re
+
+# Charger les données
+items_data = pd.read_csv("items.csv")
+interactions_data = pd.read_csv("interactions_train.csv")
+predictions_data = pd.read_csv("sample_submission.csv")
+
+# Renommer les colonnes pour harmoniser
+items_data = items_data.rename(columns={'i': 'item_id'})  # ID des livres
+interactions_data = interactions_data.rename(columns={'u': 'user_id', 'i': 'item_id'})
+
+# Fonction pour récupérer les chemins des images
+def get_book_image(item_id):
+    image_path = f"{item_id}.png"  # Les images doivent correspondre aux IDs des livres
+    if os.path.isfile(image_path):  # Vérifie si le fichier existe dans le répertoire
+        return image_path
+    else:
+        return None  # Pas d'image pour cet item
+
+# Fonction pour nettoyer les chaînes de texte
+def clean_text(text):
+    if not isinstance(text, str):
+        return "Inconnu"
+    # Supprime les barres obliques, tirets, etc.
+    text = re.sub(r"[/-]+$", "", text.strip())
+    text = re.sub(r"[…]+$", "", text.strip())
+    text = re.sub(r"\.+$", "", text.strip())
+    return text
+
+# Fonction pour générer une phrase descriptive
+def generate_description(subjects):
+    if not isinstance(subjects, str) or not subjects.strip():
+        return "Aucune description disponible pour ce livre."
+    return f"Ce livre explore des thèmes tels que : {subjects}."
+
+# Ajouter une colonne pour les URLs ou chemins des images
+items_data["Image_URL"] = items_data["item_id"].apply(get_book_image)
+
+# Trier les utilisateurs dans l'ordre croissant des `user_id`
+user_ids_sorted = sorted(interactions_data['user_id'].unique())
+
+# Barre de navigation principale
+page = st.sidebar.radio("Navigation", ["Accueil", "Votre historique d'interactions", "Vous aimerez peut-être aussi… ✨"])
+
+# **Page d'accueil**
+if page == "Accueil":
+    st.markdown(
+        "<h1 style='text-align: center; color:#154360; font-size: 36px;'>📖 Bienvenue dans l'application de la bibliothèque universitaire</h1>",
+        unsafe_allow_html=True,
+    )
+    welcome_image_path = "image.png"  # Vérifiez que cette image est bien dans le répertoire
+    if os.path.isfile(welcome_image_path):
+        st.image(welcome_image_path, caption=None, use_container_width=True)
+    else:
+        st.markdown("<p style='color:red;'>Image d'accueil non trouvée dans le répertoire.</p>", unsafe_allow_html=True)
+    st.markdown(
+        "<p style='text-align: center; font-size: 18px;'>🎯 Explorez et laissez-vous inspirer par des lectures enrichissantes adaptées à vos besoins académiques et personnels !</p>",
+        unsafe_allow_html=True,
+    )
+
+# Interface principale : sélection d'un utilisateur
+if page != "Accueil":  # La liste déroulante est masquée sur la page d'accueil
+    selected_user = st.sidebar.selectbox(
+        "🔎 Sélectionnez un identifiant utilisateur",
+        options=user_ids_sorted,
+        format_func=lambda x: str(x)
+    )
+
+# Page 1 : Interactions des utilisateurs
+if page == "Votre historique d'interactions":
+    st.markdown("<h1 style='color:#154360;'>📖 Votre historique d'interactions</h1>", unsafe_allow_html=True)
+
+    user_history = interactions_data[interactions_data['user_id'] == selected_user]
+    if not user_history.empty:
+        # Joindre les métadonnées des livres
+        history_with_metadata = user_history.merge(items_data, how="left", left_on="item_id", right_on="item_id")
+        for _, row in history_with_metadata.iterrows():
+            # Extraire et nettoyer les données nécessaires
+            title = clean_text(row['Title']) if pd.notna(row['Title']) else "Titre inconnu"
+            author = clean_text(row['Author']) if pd.notna(row['Author']) else "Auteur inconnu"
+            publisher = clean_text(row['Publisher']) if pd.notna(row['Publisher']) else "Éditeur inconnu"
+            isbn = clean_text(row['ISBN Valid']) if pd.notna(row.get('ISBN Valid')) else "Non disponible"
+            subjects = row.get('Subjects', "Aucun sujet listé")
+            description = generate_description(subjects)
+            image_url = row['Image_URL']
+
+            # Afficher les informations avec une image agrandie
+            col1, col2 = st.columns([1, 2])
+            with col1:
+                if image_url:
+                    st.image(image_url, width=250)  # Image élargie
+                else:
+                    st.text("Pas d'image")
+            with col2:
+                st.markdown(f"### {title}")
+                st.markdown(f"**Auteur :** {author}")
+                st.markdown(f"**Éditeur :** {publisher}")
+                st.markdown(f"**ISBN :** {isbn}")  # Afficher l'ISBN ici
+                st.markdown(f"**Description :** {description}")  # Ajouter la description ici
+    else:
+        st.markdown("<p style='color:red;'>Cet utilisateur n'a aucun historique d'interaction.</p>", unsafe_allow_html=True)
+
+# Page 2 : Recommandations
+if page == "Vous aimerez peut-être aussi… ✨":
+    st.markdown("<h1 style='color:#D35400;'>Vous aimerez peut-être aussi… ✨</h1>", unsafe_allow_html=True)
+
+    if selected_user in predictions_data['user_id'].values:
+        user_recommendations = predictions_data[predictions_data['user_id'] == selected_user]
+        if not user_recommendations.empty:
+            recommended_items = list(map(int, user_recommendations.iloc[0]['recommendation'].split()))
+            recommendations_with_metadata = items_data[items_data['item_id'].isin(recommended_items)]
+            recommendations_with_metadata = recommendations_with_metadata.set_index('item_id').loc[recommended_items]  # Trier selon `sample_submission`
+
+            for _, row in recommendations_with_metadata.iterrows():
+                # Extraire et nettoyer les données nécessaires
+                title = clean_text(row['Title']) if pd.notna(row['Title']) else "Titre inconnu"
+                author = clean_text(row['Author']) if pd.notna(row['Author']) else "Auteur inconnu"
+                publisher = clean_text(row['Publisher']) if pd.notna(row['Publisher']) else "Éditeur inconnu"
+                isbn = clean_text(row['ISBN Valid']) if pd.notna(row.get('ISBN Valid')) else "Non disponible"
+                subjects = row.get('Subjects', "Aucun sujet listé")
+                description = generate_description(subjects)
+                image_url = row['Image_URL']
+
+                # Afficher les informations avec une image agrandie
+                col1, col2 = st.columns([1, 2])
+                with col1:
+                    if image_url:
+                        st.image(image_url, width=250)  # Image élargie
+                    else:
+                        st.text("Pas d'image")
+                with col2:
+                    st.markdown(f"### {title}")
+                    st.markdown(f"**Auteur :** {author}")
+                    st.markdown(f"**Éditeur :** {publisher}")
+                    st.markdown(f"**ISBN :** {isbn}")  # Afficher l'ISBN ici
+                    st.markdown(f"**Description :** {description}")  # Ajouter la description ici
+        else:
+            st.markdown("<p style='color:red;'>Aucune recommandation trouvée pour cet utilisateur.</p>", unsafe_allow_html=True)
+    else:
+        st.markdown("<p style='color:red;'>Aucune recommandation disponible pour cet utilisateur.</p>", unsafe_allow_html=True)
