@@ -118,7 +118,7 @@ In conclusion, this project illustrates how recommendation systems can simplify 
 ## 5.1 Kaggle Competition Results
 
 
-## 5.2 YouTube Video :
+## 5.2 YouTube Video
 https://youtu.be/tzqqeoCQHAg
 
 # 6. Team
