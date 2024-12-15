@@ -1,6 +1,7 @@
 # DSML-Rolex-Project-Recommendation System 
 
-![image](https://github.com/user-attachments/assets/3ca7bd07-00f8-40ae-a647-48d4f433e2aa)
+![Screenshot 2024-12-15 155500](https://github.com/user-attachments/assets/77fa830d-0fab-4788-8983-2111fc5b7129)
+
 
 
 
