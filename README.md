@@ -116,6 +116,10 @@ However, despite these advancements, our final model highlights certain limitati
 In conclusion, this project illustrates how recommendation systems can simplify access to large catalogs and meet specific user needs while emphasizing the importance of data science in creating more effective and personalized experiences.
 
 ## 5.1 Kaggle Competition Results
+Our team placed 4th out of 19 groups in the Kaggle competition, with a precision score of 0.1698, just 0.018 points behind the top team. This result highlights the competitive nature of the event and the effectiveness of our model.
+
+Given the complexity of the task and the level of expertise from other participants, finishing in the top four reflects the careful work and strategic decisions we made throughout the project, including our focus on data analysis and model optimization.
+
 ![Screenshot 2024-12-15 154341](https://github.com/user-attachments/assets/78410be4-f2d7-4177-bd76-f157f052836c)
 
 
